@@ -78,6 +78,13 @@ workbook with warehouse stock, use that skill directly.
 7. **Report back.** In the run's final message, list each client with its action/watch counts,
    the channel posted to, and anything that failed.
 
+## Post once
+
+Before posting, read the last 20 messages in the target channel. If a header for the same
+snapshot date is already there, don't post again: say so in the final message instead. Post
+each message exactly once and never retry a post that returned a message timestamp. If the
+run's prompt asks for a label such as "(test run)", put it in the header line.
+
 ## Rules
 
 - Post only to the channels in `config/slack.yaml`. Never post to a client's own channel or a
