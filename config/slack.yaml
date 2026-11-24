@@ -1,0 +1,5 @@
+# Where the scheduled reports post. Internal channels only — never a Slack Connect channel.
+inventory_reports:
+  channel: C0CLGNWMKRQ   # #inventory-reports — every client's Monday inventory post goes here
+errors:
+  channel: C08C8M7MCTX   # #blueco-ai — failed runs

@@ -7,7 +7,7 @@ how anyone on the team can run them.
 
 | Report | When | Goes to | Built by |
 |---|---|---|---|
-| Weekly inventory | Monday, ~10:40 UK (after Amazon's first daily stock refresh) | Each client's internal Slack channel + Weekly Inventory Report dashboard | `skills/blueco-weekly-inventory` |
+| Weekly inventory | Monday, ~10:40 UK (after Amazon's first daily stock refresh) | #inventory-reports (one post per client) + Weekly Inventory Report dashboard | `skills/blueco-weekly-inventory` |
 | Mid-month report | 17th, ~08:00 UK (covers 1st–15th) | Client's internal Slack channel: team summary, dashboard, draft client email | `skills/blueco-report` |
 | End-of-month report | 3rd, ~08:00 UK (covers last month) | Same as mid-month | `skills/blueco-report` |
 
@@ -57,9 +57,9 @@ stock-outs, clearance pricing. One line each, with dates.
 
 ## When something fails
 
-- **A client has no data:** the run posts a "no data" notice in that client's channel. Check
+- **A client has no data:** the run posts a "no data" notice for that client in #inventory-reports. Check
   the DataDoe connection for that account and open a DataDoe support ticket if needed.
-- **The run errors:** it posts the error to `#blueco-ai`. Re-run on demand once fixed.
+- **The run errors:** it posts the error to `#blueco-ai`. Channels live in `config/slack.yaml`. Re-run on demand once fixed.
 - **Numbers look wrong:** compare with Seller Central for the same dates. Snapshots can lag a
   day; the post says which date it used.
 
