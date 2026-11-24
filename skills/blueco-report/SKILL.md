@@ -34,8 +34,18 @@ period as provisional if they changed between pulls.
 - **Sales and units for a closed period:** `Profit by SKU & Date` (`amazon_profit_by_sku_and_date`).
   Amazon's fees settle days to weeks after the sale, so on the 3rd and the 17th the last days of
   the period are incomplete for fees: mark net profit and margin **provisional** for those days.
-- **Tax:** UK prices include VAT, so net sales = `item_price_value` − `item_tax_value`. US prices
-  are already net of tax: don't subtract it there.
+- **Sales on the page:** Amazon's `total_sales` (including VAT in the UK), as in every earlier BlueCo
+  report. TACoS = ad spend ÷ total sales and Total ROAS = total sales ÷ ad spend use the same figure,
+  so they stay comparable with past reports. Say so in the scorecard note.
+- **Tax:** UK prices include VAT, and DataDoe's `profit` already subtracts `sales_tax` once. US prices
+  are already net of tax. If `sales_tax` is 0 or near 0 for older UK days (DataDoe has none recorded
+  for some accounts before Sep 2026), that period's profit is overstated: compare profit only with
+  periods that have VAT recorded, and say which.
+- **Storage charge:** Amazon posts the monthly FBA storage fee around the 7th, as one large FBA fee
+  on a single day (Vital: £260 on 7 Oct, £499 on 7 Nov). Find it (a day whose `fba_fees` is far above
+  its units would explain), call it "most likely the monthly storage fee", and show profit with and
+  without it so a mid-month report isn't misread.
+- **Changes:** show a % change only when both values are positive; for rates show percentage points.
 - **Off-Amazon lines:** drop order lines whose `sales_channel` isn't blank and isn't an Amazon
   marketplace domain (amazon.co.uk, amazon.com, …).
 - **Ratios from sums:** ACoS = ad spend ÷ ad sales, TACoS = ad spend ÷ net sales, Total ROAS =
