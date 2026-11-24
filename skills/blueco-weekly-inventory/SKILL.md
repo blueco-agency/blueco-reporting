@@ -5,8 +5,19 @@ description: Run BlueCo's Monday FBA inventory report for every active client - 
 
 # BlueCo weekly inventory report
 
-Runs every Monday morning (UK time), and on demand. Output goes to **internal** Slack
+Runs every Monday at about 10:40 UK time, and on demand. Output goes to **internal** Slack
 channels only. Nothing in this skill posts to a channel shared with a client.
+
+Why 10:40: DataDoe's FBA Inventory Health snapshot refreshes during the day (around 10:00,
+13:00 and 16:00). Before the first refresh, today's snapshot doesn't exist and an earlier run
+reports yesterday's stock. The script always uses the newest snapshot that exists and the post
+names its date.
+
+Method follows DataDoe's **FBA Stock & Restock Planner** skill (Plugins): one snapshot date
+only, never summed across dates; `inbound_quantity` already includes working, shipped and
+received (never add those on top); Amazon's ship-in recommendation is read per main SKU, and
+Grade & Resell SKUs (`amzn.gr.…`) are left out because they repeat it. For a restock
+workbook with warehouse stock, use that skill directly.
 
 ## What you need
 

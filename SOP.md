@@ -7,7 +7,7 @@ how anyone on the team can run them.
 
 | Report | When | Goes to | Built by |
 |---|---|---|---|
-| Weekly inventory | Monday, ~07:30 UK | Each client's internal Slack channel + Weekly Inventory Report dashboard | `skills/blueco-weekly-inventory` |
+| Weekly inventory | Monday, ~10:40 UK (after Amazon's first daily stock refresh) | Each client's internal Slack channel + Weekly Inventory Report dashboard | `skills/blueco-weekly-inventory` |
 | Mid-month report | 17th, ~08:00 UK (covers 1st–15th) | Client's internal Slack channel: team summary, dashboard, draft client email | `skills/blueco-report` |
 | End-of-month report | 3rd, ~08:00 UK (covers last month) | Same as mid-month | `skills/blueco-report` |
 

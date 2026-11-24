@@ -25,6 +25,33 @@ period as provisional if they changed between pulls.
 - `context/<slug>.md` for the client, if present: notes from the team for this period
   (promos, suspensions, stock issues, clearance pricing) that the data can't explain
 
+## Data rules (from DataDoe's Daily Performance Health Check skill)
+
+- **Exports:** every `exports_create` needs `limit` and `outputType`. Aggregation aliases must
+  differ from column names (sum of `ad_spend` → `total_ad_spend`). Text columns go in `groupBy`,
+  not aggregations. Load every page of `exports_source_get`. Use CSV and `exports_raw_url_get`
+  for anything processed in code; JSON caps at 1,000 rows, CSV at 5,000 (page with `skip`).
+- **Sales and units for a closed period:** `Profit by SKU & Date` (`amazon_profit_by_sku_and_date`).
+  Amazon's fees settle days to weeks after the sale, so on the 3rd and the 17th the last days of
+  the period are incomplete for fees: mark net profit and margin **provisional** for those days.
+- **Tax:** UK prices include VAT, so net sales = `item_price_value` − `item_tax_value`. US prices
+  are already net of tax: don't subtract it there.
+- **Off-Amazon lines:** drop order lines whose `sales_channel` isn't blank and isn't an Amazon
+  marketplace domain (amazon.co.uk, amazon.com, …).
+- **Ratios from sums:** ACoS = ad spend ÷ ad sales, TACoS = ad spend ÷ net sales, Total ROAS =
+  net sales ÷ ad spend, all from period totals, never averaged across days. One currency per
+  client; never add GBP and USD.
+- **Ads:** `amazon_ads_performance_by_campaign_by_date`; Sponsored Brands rows arrive last, so
+  check every ad type has rows for the period's final day before trusting spend.
+- **Buy Box:** `avg_buybox_percentage` lags up to ~3 days. A 0 on a day that hasn't loaded is not
+  a lost Buy Box.
+- **COGS:** if selling SKUs lack product cost (`cogs_missing_list`), state the share of sales
+  without COGS and treat profit as overstated.
+
+DataDoe skills to reuse for single pages (load from Plugins, follow their method):
+Keyword Rank SQP Tracker (page 5), Daily Account Health Check (page 7 verdict),
+Buy Box Loss Root Cause (page 8), FBA Stock & Restock Planner (page 6 method).
+
 ## Page order
 
 Each page opens with one sentence stating its finding. Every number shows its date range and

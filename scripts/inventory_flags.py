@@ -84,6 +84,9 @@ def main(src, out_dir):
     )
     raw = raw[~alias]
 
+    # Grade & Resell SKUs (amzn.gr.…) repeat the main SKU's recommendations; leave them out
+    raw = raw[~raw.sku.astype(str).str.startswith("amzn.gr.")]
+
     aged = raw[["inv_age_181_to_270_days", "inv_age_271_to_365_days",
                 "inv_age_366_to_455_days", "inv_age_456_plus_days"]].fillna(0).sum(axis=1)
     df = pd.DataFrame({
