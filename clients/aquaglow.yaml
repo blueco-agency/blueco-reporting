@@ -1,0 +1,20 @@
+# AquaGlow — sparkling collagen beauty drink (Amazon UK)
+client: AquaGlow UK
+slug: aquaglow
+active: true
+datadoe:
+  seller_or_vendor_id: 7e81f705-f59b-4e0f-b350-4a828b71d7b8
+  marketplace: UK
+currency: GBP
+slack:
+  internal_channel: C09JY9E19DG   # #aqua-glow-internal
+  client_channel: null
+portal:
+  url: https://portal.blueco.io   # AquaGlow-only portal (repo blueco-agency/blueco-portal)
+lead_time_days: null              # TODO: confirm supplier lead time with the account lead
+brand:
+  accent: null                    # TODO: add AquaGlow accent colour from its past dashboards
+notes:
+  - Total ROAS (total revenue / ad spend) is the key client-facing metric.
+  - Weekly reports run Monday to Sunday.
+  - Some newer SKUs (AG_CB_*) have no product name in Amazon's inventory report; show the SKU instead.

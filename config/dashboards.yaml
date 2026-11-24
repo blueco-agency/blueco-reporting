@@ -1,0 +1,5 @@
+# Published dashboards the scheduled runs update
+weekly_inventory:
+  title: Weekly Inventory Report
+  url: https://claude.ai/artifact/6yocbznAHPVRuJHsxg4jCF
+  dataset: inventory        # datasets/inventory document in the artifact store

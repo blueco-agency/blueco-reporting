@@ -1,0 +1,17 @@
+# VNSH — belly band holsters, WML holsters, dry-fire training (Amazon US)
+client: VNSH US
+slug: vnsh
+active: true
+datadoe:
+  seller_or_vendor_id: 5454e852-b66b-4ffc-9990-3af08d7a51c2
+  marketplace: US
+currency: USD
+slack:
+  internal_channel: C07GG6054Q1   # #vnsh-internal (private)
+  client_channel: null            # #vnsh-amazon-comms is shared with the client; reports do not post there
+lead_time_days: null              # TODO: confirm supplier lead time with the account lead
+brand:
+  accent: null                    # TODO: add VNSH accent colour from its past dashboards
+notes:
+  - Switcheroo fulfilment error (wrong colour variants shipped on WML ASINs) is a recurring watch item.
+  - Several ASINs carry alias SKUs (FBA…missing, Stickered.MSKU…); dedupe before totalling.

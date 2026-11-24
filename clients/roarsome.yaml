@@ -1,0 +1,17 @@
+# Roarsome — kids swim and outdoor accessories (Amazon UK)
+client: Roarsome UK
+slug: roarsome
+active: true
+datadoe:
+  seller_or_vendor_id: 1e658961-e067-4c7f-a226-b520c4823b74
+  marketplace: UK
+currency: GBP
+slack:
+  internal_channel: C08M7JAGPKQ   # #roarsome-internal
+  client_channel: null
+lead_time_days: null              # TODO: confirm supplier lead time with the account lead
+brand:
+  accent: "#f08c00"               # orange accent
+notes:
+  - KNOWN DATA GAP (Nov 2026): DataDoe returns no rows from FBA Inventory Health or FBA Inventory by ASIN & Country for this account. The inventory report posts a "no data" notice instead of numbers until DataDoe support resolves it.
+  - Only the UK account is connected in DataDoe; the US marketplace is not.

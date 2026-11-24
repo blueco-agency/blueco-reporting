@@ -1,0 +1,17 @@
+# Vital Drinks — functional still/sparkling vitamin water (Amazon UK)
+client: Vital Drinks UK
+slug: vital-drinks
+active: true
+datadoe:
+  seller_or_vendor_id: cb77dca9-7848-432d-b688-1a73b785321e
+  marketplace: UK
+currency: GBP
+slack:
+  internal_channel: C0BBSL0T7AB   # #vital-drinks-internal
+  client_channel: null            # #vital-drinks is shared with the client; reports do not post there
+lead_time_days: 20                # reorder lead time ~20 days
+brand:
+  accent: null                    # TODO: add Vital Drinks accent colour from its past dashboards
+notes:
+  - No discounting on Tropical Boost Energy Drink (12-pack or 24-pack).
+  - 24-pack range is new; low early sales are expected, not a flag on their own.

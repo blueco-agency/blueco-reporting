@@ -1,0 +1,17 @@
+# Pain Safari — personal safety products (Amazon US)
+client: Pain Safari US
+slug: pain-safari
+active: true
+datadoe:
+  seller_or_vendor_id: 9ea1a3b3-e988-42ea-9be7-66ddb459dbe1
+  marketplace: US
+currency: USD
+slack:
+  internal_channel: C06S1UK5NDS   # #pain-safari-internal
+  client_channel: null            # #pain-safari-amazon-comms is shared with the client; reports do not post there
+lead_time_days: null              # TODO: confirm supplier lead time with the account lead
+brand:
+  accent: null                    # TODO: add Pain Safari accent colour from its past dashboards
+notes:
+  - 2-in-1 Shockwave (644-STGFL, 644-STGFL-2-AMZ) shows as stranded while its appeal is pending; report it as stranded, not as a new problem.
+  - 2000 Tactical Stun Gun Flashlight (644-STGFL2k) is a high-velocity SKU; any stock-out is the top flag.
